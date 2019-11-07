@@ -2,6 +2,15 @@
     package="com.pay.library">
 
     <application>
+        <activity
+            android:theme="@style/MyTransparent"
+            android:name=".wxpay.WXEntryActivity"
+            android:exported="true" />
+        <activity
+            android:theme="@style/MyTransparent"
+            android:name=".wxpay.WXPayEntryActivity"
+            android:exported="true" />
+
         <activity-alias
             android:name="${PACKAGE_NAME}.wxapi.WXEntryActivity"
             android:exported="true"

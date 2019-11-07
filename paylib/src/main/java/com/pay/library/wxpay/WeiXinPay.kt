@@ -20,7 +20,7 @@ request.nonceStr = "1101000000140429eb40476f8896f4c9"
 request.timeStamp = "1398746574"
 request.sign = "7FFECB600D7157C5AA49810D2D8F28BC2811827B"
  */
-class WeiXinPay(val context: Context, val request: PayReq) : BasePay() {
+class WeiXinPay(context: Context, val request: PayReq) : BasePay() {
     companion object {
         @SuppressLint("StaticFieldLeak")
         internal var instance: WeiXinPay? = null
