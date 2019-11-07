@@ -41,6 +41,7 @@ allprojects {
 微信分享和微信登录
 =====
 提供一个工具类WxUtils来实现位置登录和微信分享
+
 1.微信登录
 ```kotlin
 fun login(context: Context, call: WxLoginCall?): Boolean
