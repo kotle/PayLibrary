@@ -5,9 +5,11 @@ import android.content.Context
 import com.pay.library.BasePay
 import com.pay.library.PayListener
 import com.pay.library.R
+import com.tencent.mm.opensdk.modelbase.BaseReq
 import com.tencent.mm.opensdk.modelbase.BaseResp
 import com.tencent.mm.opensdk.modelpay.PayReq
 import com.tencent.mm.opensdk.openapi.IWXAPI
+import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 
 /**
@@ -20,7 +22,7 @@ request.nonceStr = "1101000000140429eb40476f8896f4c9"
 request.timeStamp = "1398746574"
 request.sign = "7FFECB600D7157C5AA49810D2D8F28BC2811827B"
  */
-class WeiXinPay(context: Context, val request: PayReq) : BasePay() {
+class WeiXinPay(context: Context, val request: PayReq) : BasePay(), IWXAPIEventHandler {
     companion object {
         @SuppressLint("StaticFieldLeak")
         internal var instance: WeiXinPay? = null
@@ -35,6 +37,8 @@ class WeiXinPay(context: Context, val request: PayReq) : BasePay() {
         instance = this
     }
 
+    override fun onReq(p0: BaseReq?) {
+    }
 
     override fun startPay(listener: PayListener) {
         wxPayListener = listener
@@ -49,7 +53,7 @@ class WeiXinPay(context: Context, val request: PayReq) : BasePay() {
     val errorCode: Int?
         get() = _baseResp?.errCode
 
-    internal fun onResp(baseResp: BaseResp?) {
+    override fun onResp(baseResp: BaseResp?) {
         when (baseResp?.errCode) {
             BaseResp.ErrCode.ERR_OK -> {//成功
                 wxPayListener?.success(this)

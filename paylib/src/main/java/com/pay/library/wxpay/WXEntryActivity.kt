@@ -23,5 +23,6 @@ class WXEntryActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         WxUtils.handleWxIntent(this, intent)
+        finish()
     }
 }
