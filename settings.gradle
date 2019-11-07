@@ -1,0 +1,2 @@
+include ':app', ':paylib'
+rootProject.name='PayLibrary'
