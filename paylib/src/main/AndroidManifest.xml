@@ -12,11 +12,11 @@
             android:exported="true" />
 
         <activity-alias
-            android:name="${PACKAGE_NAME}.wxapi.WXEntryActivity"
+            android:name="${applicationId}.wxapi.WXEntryActivity"
             android:exported="true"
             android:targetActivity=".wxpay.WXEntryActivity" />
         <activity-alias
-            android:name="${PACKAGE_NAME}.wxapi.WXPayEntryActivity"
+            android:name="${applicationId}.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:targetActivity=".wxpay.WXPayEntryActivity" />
     </application>

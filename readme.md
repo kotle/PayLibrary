@@ -4,8 +4,6 @@
 =====
 1.在*gradle.properties*中，配置账号。
 ```yml
-#包名/applicationId(微信支付回调需要)
-packageName=com.paylibrary.demo
 #微信支付的AppId,可以不需要
 wxAppId=null
 #微信登录分享的secret，可以不需要

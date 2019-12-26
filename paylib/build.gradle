@@ -15,9 +15,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
 
-        manifestPlaceholders = [
-                PACKAGE_NAME: getProperty("packageName").toString(),
-        ]
         resValue("string", "wx_app_id", getProperty("wxAppId").toString())
         resValue("string", "wx_app_secret", getProperty("wxAppSecret").toString())
     }
